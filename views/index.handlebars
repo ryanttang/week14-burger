@@ -1,0 +1,53 @@
+<div class ="burger container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 class="text-center">Burger List</h1>
+            <ul class="list-group">
+                {{#each burger}}
+                 {{#unless this.devoured}}
+                  <li class="list-group-item list-group-item-warning">
+                      <span class="text-center">
+                          {{this.id}}. {{this.burger_name}}
+                          <!-- Method Override to PUT in a form -->
+                          <form action="/{{this.id}}?_method=PUT" method="POST">
+                          <input type="hidden" name="id" value="{{this.id}}">
+                          <button class="eatIt" type="submit">Eat it!</button>
+                          </form>
+                      </span>
+                  </li>
+                  {{/unless}}
+                {{/each}}   
+            </ul>
+        </div>
+
+        <div class="col-md-4 col-md-offset-2">
+            <h1 class="text-center">Devoured</h1>
+            <ul class="list-group">
+                {{#each burger}}
+                {{#if this.devoured}}
+                    <li class="list-group-item list-group-item-info">
+                        {{this.id}}. {{this.burger_name}}
+                    <!-- Method Override to DELETE in a form -->
+                    <form action="/{{this.id}}?_method=DELETE" method="POST">
+                     <input type="hidden" name="id" value="{{this.id}}">
+                     <button class="delete" type="submit">Delete</button>
+                    </form>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="submitRow" style="margin: 20px 0 100px 0;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h1 class="text-center">Add Burger</h1>
+                    <form method="POST" action="/" class="button">
+                        <textarea class="form-control" rows="1" type="text" name="burger"></textarea>
+                        <button class="submitBurger" type="submit">Save Burger</button>
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
