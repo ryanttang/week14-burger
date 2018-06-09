@@ -2,11 +2,11 @@ const EXPRESS = require("express");
 const burgerORM = require("../models/burger.js");
 
 // Create Routers and Export Them
-const ROUTER = express.Router();
+const ROUTER = EXPRESS.Router();
 
 // Select All Burgers from db and render
 ROUTER.get("/", function(req, res) {
-    burger.ORM.selectALL(function(data) {
+    burgerORM.selectAll(function(data) {
         res.render("index", {burger:data});
     });
 });
@@ -21,7 +21,7 @@ ROUTER.post("/", function(req, res) {
 
 // Update a burger's devoured status
 ROUTER.put("/:id", function(req, res) {
-    burger.ORM.updateOne(req.params.id, function(result) {
+    burgerORM.updateOne(req.params.id, function(result) {
         console.log(result);
         res.redirect("/");
     });

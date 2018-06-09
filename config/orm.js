@@ -1,7 +1,7 @@
 const CONNECTION = require("./connection.js");
 
 // Object of functions for db queries
-let orm = {
+let ORM = {
 
     // Select all records from burgers table
     selectAll: function(response) {

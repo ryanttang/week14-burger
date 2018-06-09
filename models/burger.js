@@ -23,6 +23,6 @@ const ORM = require("../config/orm.js");
             response(data);
           });
         }
-    }
+    };
     
     module.exports = burgerORM;
