@@ -1,9 +1,4 @@
-INSERT INTO burgers
-
-(name, bun, patty, lettuce, tomato, onion, cheese)
-
-VALUES
-
-('Classic', 1, 1, 1, 1, 1, 1),
-('Vegan', 1, 0, 1, 1, 1, 0),
-('Basic', 1, 1, 1, 0, 0, 0);
+INSERT INTO burgers (burger_name) VALUES ('Burger Burger');
+INSERT INTO burgers (burger_name) VALUES ('Cheesey Burger');
+INSERT INTO burgers (burger_name) VALUES ('Not A Burger Burger');
+INSERT INTO burgers (burger_name, devoured) VALUES ('Not Really A Burger', true);
