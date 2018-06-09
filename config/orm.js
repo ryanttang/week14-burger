@@ -41,4 +41,4 @@ let orm = {
 
 };
 
-module.exports = orm;
+module.exports = ORM;
